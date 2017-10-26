@@ -8,16 +8,18 @@ for (let i = 22; i < 50; i += 1) {
 
 let params = {
   currentDatasets: data
-}
+};
 
 const stringifiedParams = qs.stringify(params);
-var url = "http://localhost:9090?" + stringifiedParams;
-console.log(url);
+const url = `http://localhost:9090?${stringifiedParams}`;
+
 fetch(url, {
   method: 'GET',
   params: data
-}).then(function(data) {
-    console.log('request succeeded with JSON response')
-  }).catch(function(error) {
-    console.log('request failed', error)
+})
+  .then(function(data) {
+    console.log('request succeeded with JSON response');
+  })
+  .catch(function(error) {
+    console.log('request failed', error);
   });

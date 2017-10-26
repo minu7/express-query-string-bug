@@ -1,12 +1,17 @@
-let express = require('express');
+const express = require('express');
+
 const app = express();
-app.use(function (req, res) {
+
+app.use((req, res) => {
   console.log(req.params);
   console.log(req.query);
-  let yearsParams = req.query.currentDatasets;
+
+  const yearsParams = req.query.currentDatasets;
   console.log(yearsParams);
+
   res.sendStatus(200);
 });
+
 app.listen(9090, () => {
   console.log('start');
 });
